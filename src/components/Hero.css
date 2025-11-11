@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hero-container {
+    min-height: calc(100vh - 5rem);
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+@media (min-width: 768px) {
+    .hero-container {
+        min-height: 100vh;
+        padding: 4rem 2rem;
+    }
+}
+
+/* Background orbs - positioned away from image */
+.hero-bg-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-bg-orb-1 {
+    top: 15%;
+    left: 5%;
+    width: 28rem;
+    height: 28rem;
+    background: #7c3aed;
+}
+
+.hero-bg-orb-2 {
+    bottom: 15%;
+    left: 8%;
+    width: 24rem;
+    height: 24rem;
+    background: #2563eb;
+}
+
+/* Grid background */
+.hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100px 100px;
+    mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black, transparent);
+    -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black, transparent);
+}
+
+/* Content */
+.hero-content {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .hero-content {
+        padding: 0 2rem;
+    }
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 4rem;
+    }
+}
+
+/* Text section */
+.hero-text {
+    margin-left: 10vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    padding-right: 0;
+}
+
+@media (min-width: 768px) {
+    .hero-text {
+        text-align: left;
+        gap: 1.75rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-text {
+        gap: 2rem;
+    }
+}
+
+.hero-name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.hero-name-light {
+    font-size: 3rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.65);
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.hero-name-bold {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+@media (min-width: 768px) {
+    .hero-name-light,
+    .hero-name-bold {
+        font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-name-light,
+    .hero-name-bold {
+        font-size: 4.5rem;
+    }
+}
+
+/* Title animation */
+.hero-title-container {
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .hero-title-container {
+        justify-content: flex-start;
+        height: 2.75rem;
+    }
+}
+
+.hero-title {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+}
+
+.hero-title-visible {
+    opacity: 1;
+}
+
+/* Divider */
+.hero-divider {
+    width: 3rem;
+    height: 1.5px;
+    background: linear-gradient(to right, #7c3aed, #2563eb);
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .hero-divider {
+        margin: 0;
+    }
+}
+
+/* Social links */
+.hero-social {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .hero-social {
+        justify-content: flex-start;
+    }
+}
+
+.hero-social-link {
+    color: rgba(255, 255, 255, 0.35);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.hero-social-link:hover {
+    color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+
+/* Image section */
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: -1;
+    position: relative;
+    z-index: 5;
+}
+
+@media (min-width: 768px) {
+    .hero-image-container {
+        order: 0;
+        justify-content: flex-end;
+    }
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 28rem;
+}
+
+@media (min-width: 768px) {
+    .hero-image-wrapper {
+        max-width: 48rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-image-wrapper {
+        max-width: 48rem;
+    }
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    display: block;
+    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.9));
+}
+
+.hero-image-gradient {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 55%;
+    background: linear-gradient(to top, 
+        #000000 0%, 
+        #000000 15%,
+        rgba(0, 0, 0, 0.95) 30%,
+        rgba(0, 0, 0, 0.7) 50%,
+        rgba(0, 0, 0, 0.3) 70%,
+        transparent 100%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Add a black base beneath the image for seamless blend */
+.hero-image-wrapper::before {
+    content: '';
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 40%;
+    background: radial-gradient(ellipse at center, 
+        #000000 0%, 
+        rgba(0, 0, 0, 0.8) 30%,
+        transparent 70%);
+    z-index: 1;
+    filter: blur(30px);
+}
+
+.hero-image-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25%;
+    background: #000000;
+    z-index: 0;
+}
