@@ -9,7 +9,7 @@ const contactData = {
     email: 'mhdnabeel91@gmail.com',
     phone: '+91 9496085317',
     location: 'Calicut, India',
-    linkedin: 'https:linkedin.com/in/nabeel-muhammed-7a089a220', 
+    linkedin: 'https://linkedin.com/in/nabeel-muhammed-7a089a220', 
     github: 'https://github.com/nabeelvkd', 
     instagram: 'https://www.instagram.com/mhd.nabeeel?igsh=MWRiOThieWZpMm50bg==', // New Placeholder
     x: '#', // New Placeholder for X (Twitter)
