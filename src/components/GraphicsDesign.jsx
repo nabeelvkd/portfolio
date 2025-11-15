@@ -11,7 +11,6 @@ const baseDesignData = [
     { id: 6, image: 'https://i.ibb.co/Mx9SkhSN/p6.jpg' },
     { id: 7, image: 'https://i.ibb.co/DPb2snY9/To-win-you-have-to-score-one-more-goal-than-your-opponent-Johan-Cruyff-Hey-football-fanat.jpg' },
     { id: 8, image: 'https://i.ibb.co/mVPNV1V1/kpl-kwpl-kerala-logodesign-poster-graphicdesign-posterdesign-1.jpg' },
-    { id: 9, image: 'https://m.media-amazon.com/images/I/91llCgdGxTL._AC_UF1000,1000_QL80_.jpg' },
     { id: 10, image: 'https://i.ibb.co/7NZR92XY/image.jpg' },
 ];
 
@@ -70,7 +69,7 @@ function GalleryTrack({ trackData, duration }) {
 // --- MAIN GRAPHICS PORTFOLIO COMPONENT ---
 function GraphicsPortfolio() {
     // Set a base duration (Desktop speed)
-    const desktopDuration = 55;
+    const desktopDuration = 20;
 
     return (
         <div className="bg-black text-white py-32 px-4 relative overflow-hidden min-h-[700px]">
@@ -88,7 +87,7 @@ function GraphicsPortfolio() {
                     </h2>
                     <div className="w-24 h-px bg-gradient-to-r from-white/30 to-transparent mb-8"></div>
                     <p className="text-xl text-gray-500 max-w-3xl">
-                        A dynamic, flowing stream of portrait-oriented design works, illustrating creative proficiency alongside technical skills.
+                        A dynamic, flowing stream of graphics design works, illustrating creative proficiency alongside technical skills.
                     </p>
                 </div>
             </div>
