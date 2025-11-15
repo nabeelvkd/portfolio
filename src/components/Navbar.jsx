@@ -7,6 +7,7 @@ function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     // --- Core Scrolling Function ---
+    // This is kept mostly for standard section scrolling, but we'll bypass it for Home/Contact.
     const scrollToId = useCallback((id) => {
         const element = document.getElementById(id.replace('#', ''));
         if (element) {
@@ -27,19 +28,35 @@ function Navbar() {
     }, []);
 
     const navLinks = [
-        // Ensure these IDs match the IDs you assign to your sections (e.g., <div id="home">)
-        { name: 'Home', href: '#home' },
-        { name: 'About', href: '#experience' }, // Assuming 'About' links to the Experience section
-        { name: 'Projects', href: '#projects' },
+        // Home uses '#' which should scroll to top.
+        { name: 'Home', href: '#home' }, 
         { name: 'Contact', href: '#contact' }
     ];
 
     // Handler for navigation clicks
     const handleNavigation = (e, href) => {
-        e.preventDefault(); // Prevent default hash scrolling
-        setIsMobileMenuOpen(false); // Close mobile menu if open
+        e.preventDefault(); 
+        setIsMobileMenuOpen(false); 
         
-        scrollToId(href); // Call the smooth scroll function
+        // FIX: Implement dedicated logic for Home (Top) and Contact (Bottom)
+        if (href === '#home' || href === '#') {
+            // Scroll to the absolute top of the page
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        } else if (href === '#contact') {
+            // Scroll to the absolute bottom of the page
+            // We use document.body.scrollHeight (or document.documentElement.scrollHeight) 
+            // for maximum height across browsers.
+            window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: 'smooth'
+            });
+        } else {
+            // Use the standard element-based scroll for other (omitted) sections
+            scrollToId(href); 
+        }
     };
 
     // Base classes for the navbar (fixed, dark, transition)
@@ -55,7 +72,7 @@ function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     
-                    {/* Logo (Scrolls to #home) */}
+                    {/* Logo (Scrolls to #home/Top) */}
                     <a 
                         href="#home" 
                         className="flex items-center text-2xl font-bold tracking-wider transition-colors duration-300 hover:text-gray-300"

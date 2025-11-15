@@ -23,7 +23,7 @@ function App() {
         <Projects/>
         <Skills/>
         <GraphicsPortfolio/>
-        <FeaturedProjects/>
+        {/*<FeaturedProjects/>*/}
         <Footer/>
       </main>
     </div>

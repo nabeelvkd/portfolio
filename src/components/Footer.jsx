@@ -9,12 +9,12 @@ const contactData = {
     email: 'mhdnabeel91@gmail.com',
     phone: '+91 9496085317',
     location: 'Calicut, India',
-    linkedin: '#', 
-    github: '#', 
-    instagram: '#', // New Placeholder
+    linkedin: 'https:linkedin.com/in/nabeel-muhammed-7a089a220', 
+    github: 'https://github.com/nabeelvkd', 
+    instagram: 'https://www.instagram.com/mhd.nabeeel?igsh=MWRiOThieWZpMm50bg==', // New Placeholder
     x: '#', // New Placeholder for X (Twitter)
-    facebook: '#', // New Placeholder
-    whatsapp: '#', // New Placeholder
+    facebook: 'https://www.facebook.com/mohdnabeel.vkd', // New Placeholder
+    whatsapp: 'https://api.whatsapp.com/send/?phone=919496085317', // New Placeholder
 };
 
 // --- Footer Link Component (Modified) ---

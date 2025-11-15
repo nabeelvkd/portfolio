@@ -13,7 +13,7 @@ const projectData = [
             'Developed a full-stack web application designed to help businesses manage customer flow through online tokens and scheduled appointments.',
             'The system is customizable for various services like a salon, clinic, auto garage, or legal service.',
         ],
-        gitLink: '#', // Placeholder for Git Link - REPLACE WITH ACTUAL URL
+        gitLink: 'https://github.com/nabeelvkd/token', // Placeholder for Git Link - REPLACE WITH ACTUAL URL
     },
     {
         id: 2,
@@ -24,7 +24,7 @@ const projectData = [
             'Designed a system that charges electric vehicles while driving using inductive power transfer (IPT) and resonant frequency tuning.',
             'The design aimed to improve efficiency and reduce energy loss.',
         ],
-        gitLink: '#', // Placeholder for Git Link - REPLACE WITH ACTUAL URL
+        gitLink: 'https://github.com/nabeelvkd', // Placeholder for Git Link - REPLACE WITH ACTUAL URL
     },
     {
         id: 3,
@@ -35,7 +35,7 @@ const projectData = [
             'Built an automated hydroponic system using the ESP32 to monitor and control factors like water pH, temperature and lighting.',
             'The system automatically adjusts the lighting and water quality.',
         ],
-        gitLink: '#', // Placeholder for Git Link - REPLACE WITH ACTUAL URL
+        gitLink: 'https://github.com/nabeelvkd', // Placeholder for Git Link - REPLACE WITH ACTUAL URL
     },
 ];
 

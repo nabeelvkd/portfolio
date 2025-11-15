@@ -93,8 +93,6 @@ function Hero() {
     return (
         <div 
             ref={containerRef} 
-            // FIX: Removed min-h-screen and used padding (py-32) + flex for vertical centering 
-            // to avoid unnecessary empty space when content is short.
             className="relative bg-black text-white overflow-hidden flex items-center py-32 sm:py-24"
             style={{ minHeight: '85vh' }}
         >
@@ -129,15 +127,16 @@ function Hero() {
 
             {/* --- MAIN CONTENT (Two Columns) --- */}
             <div className="max-w-7xl mx-auto px-4 relative z-10 w-full">
+                {/* FIX: Ensure grid collapse to single column on small screens */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                     
-                    {/* ===== LEFT COLUMN: Text and Social Links (lg:col-span-7) ===== */}
+                    {/* ===== LEFT COLUMN: Text and Social Links (FULL WIDTH on mobile, lg:col-span-7 on desktop) ===== */}
                     <div className="lg:col-span-7 text-center lg:text-left">
                         
                         {/* Badge */}
                         <div className="inline-flex lg:inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6 hover:bg-white/10 transition-all duration-500 animate-fade-in">
                             <Sparkles className="w-4 h-4 text-white/60 animate-pulse" />
-                            <span className="text-sm text-white/60 font-medium tracking-wider uppercase">Welcome to my portfolio</span>
+                            <span className="text-sm text-white/60 font-medium tracking-wider uppercase">Portfolio</span>
                         </div>
 
                         {/* Name & Greeting */}
@@ -156,7 +155,7 @@ function Hero() {
                                     isTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
                                 }`}
                             >
-                                A {HERO_TITLES[currentTitleIndex]}
+                                A{HERO_TITLES[currentTitleIndex]}
                             </h3>
                         </div>
                         
@@ -173,19 +172,18 @@ function Hero() {
                         </div>
                     </div>
 
-                    {/* ===== RIGHT COLUMN: Seamless Image (lg:col-span-5) ===== */}
-                    <div className="lg:col-span-5 flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '1000ms' }}>
+                    {/* ===== RIGHT COLUMN: Seamless Image (HIDDEN ON MOBILE, lg:col-span-5 on desktop) ===== */}
+                    <div className="hidden lg:col-span-5 lg:flex justify-end animate-fade-in" style={{ animationDelay: '1000ms' }}>
                         {/* Smaller height on mobile, taller on desktop */}
                         <div className="relative w-full max-w-md h-[400px] md:h-[550px] lg:h-[700px] overflow-hidden">
                             
-                            {/* Blended Image Holder (Simulates seamless blend into black background) */}
+                            {/* Blended Image Holder */}
                             <div className="absolute inset-0 w-full h-full bg-white/5 opacity-80" 
                                 style={{
                                     backgroundImage: `url(https://i.ibb.co/XfP4HVjz/39.jpg)`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center top',
-                                    // FIX: Adjusted mask to be tighter (90%) for better visibility, 
-                                    // simulating a full-height image blended smoothly.
+                                    // FIX: Maintained 90% mask for blending effect on desktop
                                     maskImage: 'radial-gradient(circle at center, black 90%, transparent 100%)',
                                     WebkitMaskImage: 'radial-gradient(circle at center, black 90%, transparent 100%)',
                                 }}

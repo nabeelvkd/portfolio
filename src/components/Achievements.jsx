@@ -15,17 +15,7 @@ const achievementsData = [
         type: 'Academic',
         isGolden: true, 
     },
-    {
-        id: 2,
-        title: 'Competitive Programming Proficiency',
-        icon: CheckSquare,
-        details: [
-            { label: 'Platform', value: 'LeetCode' },
-            { label: 'Progress', value: '150+ problems solved' }
-        ],
-        type: 'Technical',
-        isGolden: false,
-    },
+   
 ];
 
 // Animation variants for staggered entry
@@ -125,7 +115,7 @@ function Achievements() {
                         <span className="text-sm text-white/60 font-medium tracking-wider uppercase">Milestones & Recognition</span>
                     </div>
                     <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tight leading-none">
-                        Achievements
+                        Credentials
                     </h2>
                     <div className="w-24 h-px bg-gradient-to-r from-white/30 to-transparent"></div>
                     <p className="mt-8 text-xl text-gray-500 leading-relaxed max-w-4xl">
