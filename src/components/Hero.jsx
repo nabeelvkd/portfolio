@@ -4,9 +4,9 @@ import { Github, Linkedin, Mail, ArrowDown, Sparkles } from 'lucide-react';
 
 // Data extracted from resume
 const HERO_TITLES = [
-    'Electrical & Electronics Engineer',
-    'Graphics Designer',
-    'Full-stack Web Developer',
+    'n Electrical & Electronics Engineer',
+    ' Graphics Designer',
+    ' Full-stack Web Developer',
 ];
 
 const CONTACT_LINKS = {
