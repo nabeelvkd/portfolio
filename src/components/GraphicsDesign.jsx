@@ -1,15 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Palette, Code } from 'lucide-react'; 
+import { Palette, Code } from 'lucide-react';
 
 // --- BASE GALLERY DATA (10 Unique Items) ---
 const baseDesignData = [
-    { id: 1, image: 'https://i.ibb.co/Mx9SkhSN/p6.jpg' },
-    { id: 2, image: 'https://i.ibb.co/qLYfTnMS/poster4-01-01.jpg' },
+
     { id: 3, image: 'https://i.ibb.co/4Rwr00yL/kpl-kwpl-kerala-logodesign-poster-graphicdesign-posterdesign.jpg' },
     { id: 4, image: 'https://i.ibb.co/7dzw5zvM/463040259-1232481484660760-1009524893090421400-n.jpg' },
     { id: 5, image: 'https://i.ibb.co/bgMmydj2/502063739-17990037812814572-4034309491166415629-n.webp' },
-    { id: 6, image: 'https://i.ibb.co/8gWDry0T/poster1lysie.jpg' },
+    { id: 6, image: 'https://i.ibb.co/Mx9SkhSN/p6.jpg' },
     { id: 7, image: 'https://i.ibb.co/DPb2snY9/To-win-you-have-to-score-one-more-goal-than-your-opponent-Johan-Cruyff-Hey-football-fanat.jpg' },
     { id: 8, image: 'https://i.ibb.co/mVPNV1V1/kpl-kwpl-kerala-logodesign-poster-graphicdesign-posterdesign-1.jpg' },
     { id: 9, image: 'https://m.media-amazon.com/images/I/91llCgdGxTL._AC_UF1000,1000_QL80_.jpg' },
@@ -31,28 +30,28 @@ const partnerLogos = [
 // --- GALLERY TRACK COMPONENT ---
 function GalleryTrack({ trackData, duration }) {
     const durationStyle = { '--duration': `${duration}s` };
-    
+
     return (
-        <div 
+        <div
             className={`w-[200%] flex flex-nowrap gap-4 md:gap-10 py-3 transition-all duration-300 animate-scroll-left items-center`}
             style={durationStyle}
         >
             {trackData.map((item, index) => {
                 // Apply vertical offset for the wave effect
-                const offset = (index % 2 === 0) 
+                const offset = (index % 2 === 0)
                     // Use a slightly smaller offset to prevent clipping in the main container
-                    ? 'translate-y-10 md:translate-y-12' 
-                    : '-translate-y-10 md:-translate-y-12'; 
-                
+                    ? 'translate-y-10 md:translate-y-12'
+                    : '-translate-y-10 md:-translate-y-12';
+
                 return (
-                    <div 
+                    <div
                         key={item.id}
                         // Outer container determines the wave offset, inner div holds the image
                         className={`flex-shrink-0 w-60 h-80 md:w-[400px] md:h-[500px] transition-transform duration-700 ${offset}`}
                     >
                         <div className="w-full h-full rounded-lg overflow-hidden relative group">
                             {/* FIX: Using object-cover to ensure no letterboxing, accepting slight crop if aspect ratio is way off */}
-                            <img 
+                            <img
                                 src={item.image}
                                 alt={`Design Work ${item.id}`}
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
@@ -71,13 +70,13 @@ function GalleryTrack({ trackData, duration }) {
 // --- MAIN GRAPHICS PORTFOLIO COMPONENT ---
 function GraphicsPortfolio() {
     // Set a base duration (Desktop speed)
-    const desktopDuration = 55; 
-    
+    const desktopDuration = 55;
+
     return (
         <div className="bg-black text-white py-32 px-4 relative overflow-hidden min-h-[700px]">
-            
+
             <div className="max-w-7xl mx-auto relative z-10 mb-16">
-                
+
                 {/* Header (Left-aligned) */}
                 <div className="mb-12">
                     <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-8">
@@ -85,7 +84,7 @@ function GraphicsPortfolio() {
                         <span className="text-sm text-white/60 font-medium tracking-wider uppercase">Creative Showcase</span>
                     </div>
                     <h2 className="text-6xl md:text-7xl font-bold text-white mb-4 tracking-tight leading-none">
-                        Visual Design Portfolio
+                        Design Portfolio
                     </h2>
                     <div className="w-24 h-px bg-gradient-to-r from-white/30 to-transparent mb-8"></div>
                     <p className="text-xl text-gray-500 max-w-3xl">
@@ -97,15 +96,15 @@ function GraphicsPortfolio() {
             {/* --- AUTO-SCROLLING WAVE GALLERY CONTAINER --- */}
             {/* The primary viewport container */}
             <div className="relative overflow-hidden w-full h-[450px] md:h-[650px] flex items-center mb-24">
-                
+
                 {/* Track 1: Scrolls Left with Wave Effect */}
                 <div className="flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
-                    <GalleryTrack 
-                        trackData={designTrack} 
-                        duration={desktopDuration} 
+                    <GalleryTrack
+                        trackData={designTrack}
+                        duration={desktopDuration}
                     />
                 </div>
-                
+
                 {/* Fade overlays for the edges */}
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute left-0 inset-y-0 w-1/12 bg-gradient-to-r from-black to-transparent"></div>
@@ -118,7 +117,7 @@ function GraphicsPortfolio() {
                 <h3 className="text-xl font-semibold text-white/80 mb-8 uppercase text-center">
                     Clients & Featured Partnerships
                 </h3>
-                <motion.div 
+                <motion.div
                     className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +133,7 @@ function GraphicsPortfolio() {
                         />
                     ))}
                 </motion.div>
-                
+
                 {/* Decorative separator line */}
                 <div className="w-full h-px bg-white/10 mt-12 mx-auto"></div>
             </div>
